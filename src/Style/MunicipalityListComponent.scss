@@ -1,0 +1,29 @@
+.municipality-list-wrapper {
+  color: red;
+  a {
+    color: red;
+  }
+  .enabled {
+    color: green;
+    a {
+      color: green;
+    }
+  }
+
+  ul {
+  list-style: none;
+  padding: 0;
+    li {
+      &:before {
+        content: 'X';
+        margin-right: 10px;
+      }
+      &.enabled {
+        &:before {
+          content: '✓';
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.area-details-wrapper {
+  .description {
+    max-width: $large-width;
+  }
+
+  .area-picker{
+    width: $large-width;
+
+    .description {
+      margin-bottom: 85px;
+    }
+  }
+
+  .top-button-container{
+    width: $large-width;
+    position: relative;
+  }
+
+  .add-section-popup-wrapper {
+    position: relative;
+
+    .add-section-popup {
+      @include absolute($top: -3px, $left: 6px);
+      z-index: 2;
+      width: 350px;
+      border-radius: 5px;
+      background: #fff;
+      box-shadow: 1px 1px 1px 1px rgba(108, 108, 108, 0.5);
+
+      button {
+        width: 100%;
+        border-bottom: 1px solid #F0F0F0;
+        padding: 10px;
+
+        &:hover {
+          background-color: #F0F0F0;
+        }
+      }
+    }
+  }
+
+  .divider {
+    width: $large-width;
+    border: solid 1px #e1e1e1;
+    margin: 45px auto 45px auto;
+    border-right : 0;
+    border-left: 0;
+
+    &.dashed {
+      border: dashed 1px #e1e1e1;
+      margin: 25px auto 0 auto;
+    }
+  }
+
+  .housing-checkbox-container {
+    .input-w-label-wrapper{
+      float: left;
+      width: 120px;
+    }
+  }
+
+  .section {
+    margin: 15px 0;
+    width: $large-width;
+    position: relative;
+
+    .content {
+      a {
+        color: #3693e6;
+      }
+    }
+
+    .btn {
+      &.move{
+        &.up{
+          @include absolute($top: 35px, $right: -50px);
+        }
+
+        &.down {
+          @include absolute($top: 0px, $right: -50px);
+        }
+      }
+    }
+
+    .editor-fields {
+      @include transition(all .5s cubic-bezier(0, 1, 0.5, 1));
+      height: 0;
+      max-height: 0;
+      overflow: hidden;
+
+      &.editing {
+        height: auto;
+        max-height: 1000px;
+      }
+    }
+
+    .type {
+      font-weight: bold;
+    }
+  }
+}
+
+.bottom-container {
+  @include fixed($bottom: 0);
+  padding: 15px 30px;
+  background-color: rgba(255,255,255,.7);
+}

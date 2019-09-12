@@ -1,0 +1,135 @@
+.selected-images-wrapper {
+  width: $large-width;
+  margin: 0;
+
+  .add-link-wrapper {
+    width: 100%;
+    float: left;
+    padding: 5px 0px;
+
+    .blue-link {
+      margin: 0;
+    }
+  }
+
+  .image-wrapper {
+    float: left;
+    width: 31%;
+    margin-right: 15px;
+    position: relative;
+
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      line-height: 17px;
+
+      &.single {
+        margin: 0;
+      }
+    }
+
+    .close-container {
+      @include absolute($top: 45px, $right: 5px);
+    }
+
+    .background-shadow {
+      background-color: #c3c3c3;
+    }
+
+    .image {
+      @include size(100%, 150px);
+      background-size: cover;
+      background-position: center;
+      box-shadow: 1px 1px 0 0 rgba(108, 108, 108, 0.5);
+
+      &.magnifying-glass {
+        cursor: zoom-in;
+      }
+
+      &.add {
+        color: #FFF;
+        margin-top: 31px;
+        text-align: center;
+        background-color: #2ba777;
+        cursor: pointer;
+        width: 100%;
+
+        .plus-sign {
+          @include svg-icon-w-fallback-no-element-width('../Images/Icons/icon_add_white.svg', '', 30px, 30px);
+          @include size(30px);
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+.image-picker-modal {
+  @include fixed($top: 0, $right: 0, $bottom: 0, $left: 0);
+  z-index: 2;
+  background-color: rgba(31, 47, 56, 0.75);
+
+  .inner-container {
+    width: $large-width;
+    position: relative;
+    height: calc(100vh - 80px);
+    background-color: #FFF;
+    border-radius: 5px;
+    margin: 20px auto;
+    padding: 20px;
+
+    &.popup {
+      top: 30%;
+      height: auto;
+    }
+
+    &.image-modal {
+      height: 85%;
+      width: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      .close-container {
+        right: 10px;
+      }
+
+      h2 {
+        float: left;
+        background-color: rgba(108, 108, 108, 0.4);
+        padding: 5px;
+        border-radius: 5px;
+        text-shadow: 1px 1px rgba(108, 108, 108, 0.9);
+        color: #FFF;
+      }
+    }
+
+    .close-container {
+      @include absolute($top: 20px, $right: 40px);
+      z-index: 3;
+    }
+
+    .images {
+      @include size(100%);
+      overflow: auto;
+
+      .selected-images-wrapper {
+        .image-wrapper {
+          p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+          }
+
+          .image {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

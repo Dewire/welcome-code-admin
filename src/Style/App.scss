@@ -1,0 +1,148 @@
+@import '~foundation-sites/scss/foundation';
+@include foundation-grid;
+@include foundation-float-classes;
+@include foundation-visibility-classes;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+
+$large-width: 814px;
+$medium-width: 682px;
+$small-width: 325px;
+$xsmall-width: 300px;
+$navBarWidth: 250px;
+
+@import 'Mixins';
+@import 'Reset';
+@import 'Leaflet';
+@import 'ButtonsLinks';
+@import 'Input';
+@import 'Typography';
+@import 'StartpageComponent';
+@import 'NavigationSideBar';
+@import 'AreasComponent';
+@import 'AreaDetailsComponent';
+@import 'Editor';
+@import 'TabComponent';
+@import 'MapViewComponent';
+@import 'AreaCardComponent';
+@import 'MapIcons';
+@import 'LoadingIndicator';
+@import 'FoldingCube';
+@import 'MediaLibaryComponent';
+@import 'ImagePickerComponent';
+@import 'SettingsComponent';
+@import 'NoPageComponent';
+@import 'MunicipalityListComponent';
+@import 'MunicipalityComponent';
+
+.column,
+.columns {
+    min-height: 1px;
+}
+.row {
+  max-width: 100%;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.m10 {
+  margin: 10px !important;
+}
+
+.mlr10 {
+  margin: 0 10px !important;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt15 {
+  margin-top: 15px;
+}
+
+.mt25 {
+  margin-top: 25px !important;
+}
+
+.ml15{
+  margin-left: 15px;
+}
+
+$theme-green-main: #2ba777;
+
+.is-hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+[data-whatinput="keyboard"]   {
+  .explore-button {
+    &:focus {
+      .btn-content {
+        box-shadow: 0 0 2px 2px #51a7e8;
+      }
+    }
+  }
+}
+
+.root-wrapper {
+  position: relative;
+}
+
+[data-whatinput="mouse"], [data-whatinput="touch"]  {
+  button {
+    &:focus {
+      outline: 0;
+    }
+  }
+  li {
+    &:focus {
+      outline: 0;
+    }
+  }
+  input[type=submit] {
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  a {
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.right-wrapper {
+  float: left;
+  width: calc(100% - #{$navBarWidth});
+  height: 100vh;
+  overflow-y: auto;
+
+  .content-wrapper {
+    padding: 30px 30px 100px 30px;
+  }
+}
+
+.english {
+  @include svg-icon-w-fallback-no-element-width( '../Images/Icons/icon_english.svg', '', 30px, 30px);
+  height: 50px;
+  background-position: center right;
+}
+
+.swedish {
+  @include svg-icon-w-fallback-no-element-width( '../Images/Icons/icon_swedish.svg', '', 30px, 30px);
+  height: 50px;
+  background-position: center right;
+}
+
+.clear {
+  clear: both;
+}

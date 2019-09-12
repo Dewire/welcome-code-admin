@@ -1,0 +1,50 @@
+.areas-table-wrapper {
+  position: relative;
+  width: $large-width;
+
+  .text-input-wrapper {
+    @include absolute($top: -69px, $right: 0);
+  }
+}
+
+.areas-table {
+  .heading {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  button {
+    color: #2ba777;
+    padding: 5px 10px;
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+
+    &:visited {
+      color: #2ba777;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    p {
+      text-transform: capitalize;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    &:nth-child(odd){
+      background-color: #F4F4F5;
+    }
+    .destination {
+      float: left;
+    }
+    .distance {
+      float: right;
+      font-weight: 600;
+    }
+  }
+}

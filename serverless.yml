@@ -1,0 +1,24 @@
+service:
+  name:                welcome-admin
+
+plugins:
+  - serverless-finch
+
+custom:
+  client:
+    bucketName: static.${self:provider.stage}.admin.${self:provider.domain}
+    distributionFolder: build # (Optional) The location of your website. This defaults to client/dist
+    indexDocument: index.html # (Optional) The name of your index document inside your distributionFolder. Defaults to index.html
+    errorDocument: index.html # (Optional) The name of your error document inside your distributionFolder. Defaults to error.html
+
+provider:
+  name:                aws
+  stage:               ${opt:stage, 'cont'}
+  region:              eu-west-1
+  domain:              ${env:DOMAIN, opt:domain, 'welcome.dewire.com'}
+  deploymentBucket:
+    name: stacks.${self:provider.domain}
+  stackTags:
+    STACK:  "${self:service}"
+    REGION: "${self:provider.region}"
+    COMMIT: "${opt:commit}"

@@ -1,0 +1,93 @@
+html, body {
+  margin:0;
+  padding:0;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0.3px;
+  font-weight: bold;
+  margin: 0;
+
+  @include breakpoint(small only) {
+    font-size: 30px;
+    letter-spacing: 0.2px;
+  }
+  @include breakpoint(medium only) {
+    font-size: 45px;
+    letter-spacing: 0;
+  }
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+
+  @include breakpoint(medium only){
+    font-size: 20px;
+  };
+
+  @include breakpoint(small only) {
+    font-size: 16px;
+  }
+}
+.page-header{
+  text-align: left;
+}
+.semi-bold {
+  font-weight: 600;
+}
+
+.f15 {
+  font-size: 15px;
+}
+
+.f16 {
+  font-size: 16px;
+}
+
+.f18 {
+  font-size: 18px;
+}
+
+.ta-right{
+  text-align: right;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.grey {
+  color: #899195;
+}
+
+.grey-mobile-only {
+  @include breakpoint(small only){
+    color: #899195;
+  }
+}
+
+article {
+  .main-text-content {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: left;
+    color: #1f2f38;
+
+    &.preamble {
+      font-weight: 600;
+    }
+
+    @include breakpoint(small only) {
+      font-size: 16px;
+      line-height: 25px;
+    }
+    @include breakpoint(medium only) {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+}

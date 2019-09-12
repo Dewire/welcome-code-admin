@@ -1,0 +1,58 @@
+@import 'TabContactComponent';
+
+.tab-wrapper {
+  overflow-y: auto;
+  z-index: 2;
+  background-color: #FFF;
+  width: 390px;
+  padding: 30px;
+border:solid 3px rgba(174, 171, 171, 0.5);
+
+  .loading-indicator {
+    display: none;
+  }
+
+  &.hidden {
+    width: 0px;
+    padding: 0;
+
+    .tab-content {
+      display: none;
+    }
+  }
+
+  &.loading {
+    overflow-y: visible;
+
+    .loading-indicator {
+      display: block;
+      height: 100vh;
+      @include absolute($top: 0, $bottom: 0, $right: 0, $left: 0);
+      background-color: rgba(31, 47, 56, 0.75);
+      z-index: 1;
+      padding-top: calc(50vh - 30px);
+    }
+  }
+
+  @include breakpoint(medium only){
+    width: 320px;
+    right: 67px;
+    padding: 25px;
+  }
+
+  @include breakpoint(small only){
+    padding: 20px;
+    margin-left: 10px;
+    width: initial;
+    left: 0;
+    right: 0;
+  }
+
+  .tab-content {
+    position: relative;
+
+    .btn.close {
+      @include absolute($top: 0, $right: 0);
+    }
+  }
+}

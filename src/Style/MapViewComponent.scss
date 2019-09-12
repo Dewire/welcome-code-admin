@@ -1,0 +1,67 @@
+.map-view-wrapper {
+  position: relative;
+
+  #map {
+    @include size(814px, 500px);
+    font-family: 'Poppins', sans-serif;
+    border: solid 1px #2ba777;
+    margin-bottom: 15px;
+  }
+
+  .no-interact {
+    div, button {
+      cursor: default !important;
+    }
+  }
+
+  .map-view-container {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    &.inactive {
+      pointer-events: none;
+      cursor: auto;
+
+      .leaflet-marker-icon {
+        display: none;
+      }
+    }
+
+    @include breakpoint(small only) {
+      .ol-overlay-container {
+        position: static !important;
+      }
+    }
+  }
+}
+
+.filtered-areas-container {
+  @include fixed($left: 180px, $bottom: 20px);
+  width: 240px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 1px 1px 0 0 rgba(108, 108, 108, 0.5);
+
+  @include breakpoint(medium only) {
+    left: 160px;
+  }
+
+  @include breakpoint(small only) {
+    left: 20px;
+  }
+
+  p {
+    float: left;
+    margin-top: 8px;
+    width: 50%;
+  }
+
+  .areas {
+    margin-top: 9px;
+    width: calc(50% - 2px);
+    border-right: solid 2px #e1e1e1;
+  }
+}

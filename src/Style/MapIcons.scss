@@ -1,0 +1,151 @@
+.map-items {
+  background-color: #3693e6;
+  float: left;
+  width: 1000px;
+  height: 1000px;
+}
+
+.map-pin-poi {
+  .icon-pin {
+    @include size(29px, 41px);
+    background-image: url("../Images/Icons/icon_map_pin_white.svg");
+    position: absolute;
+    z-index: 2;
+
+    img {
+      @include size(15px);
+      margin: 7px;
+    }
+  }
+}
+
+/* Area map pin */
+.map-pin-area {
+  position: relative;
+
+  &.green-theme {
+    .icon-pin {
+      @include size(29px, 41px);
+      position: absolute;
+      z-index: 2;
+      &.icon-green {
+        background-image: url("../Images/Icons/icon_map_pin_green.svg");
+        &.transparent {
+          background-image: url("../Images/Icons/icon_map_pin_green_transparent.svg");
+        }
+      }
+      &.fav {
+        background-image: url("../Images/Icons/icon_map_pin_green_fav.svg");
+        @include size(39px, 45px);
+        left: -10px;
+        top: -10px
+      }
+    }
+
+    .area-name {
+      @include absolute($left: 8px, $top: 1px);
+      background-color: #fff;
+      height: 26px;
+      border-radius: 100px;
+      overflow: hidden;
+      opacity: 0.9;
+      white-space: nowrap;
+      p {
+        text-transform: capitalize;
+        color: #000;
+        font-size: 13px;
+        font-weight: 600;
+        margin: 4px 0 0 25px;
+        padding-right: 12px;
+      }
+      &.fav {
+        top: -4px;
+      }
+    }
+  }
+
+  &.selected-map-marker {
+    .icon-pin {
+      display: none !important;
+      @include breakpoint(small only) {
+        display: block !important;
+        background-image: url("../Images/Icons/icon_map_pin_grey.svg") !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 29px 41px;
+        width: 29px;
+        height: 41px;
+      }
+    }
+
+    .area-name {
+      display: none !important;
+      @include breakpoint(small only) {
+        display: block !important;
+      }
+    }
+  }
+}
+
+/* Map pin multiple */
+.map-pin-multiple-wrapper {
+
+  .icon-pin {
+    background: url("../Images/Icons/icon_map_pin_multiple.svg") no-repeat;
+    @include size(44px, 50px);
+
+    p {
+      font-size: 13px;
+      text-align: center;
+      padding-top: 14px;
+      span {
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+    &.fav {
+      background: url("../Images/Icons/icon_map_pin_multiple_fav.svg") no-repeat;
+      width: 46px;
+    }
+  }
+}
+
+.map-view-button-wrapper{
+  .editing-notice {
+    @include absolute($left: 10px, $top: 10px);
+    background-color: rgba(255,255,255,0.8);
+    padding: 5px 10px;
+    border-radius: 5px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .btn {
+    padding: 0;
+
+    &.zoom {
+      font-size: 30px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    &.edit-map-state {
+      @include absolute($left: 10px, $bottom: 10px);
+      @include size(auto, 31px);
+      padding: 0 10px;
+    }
+
+    &.zoom-out {
+      @include absolute($left: 775px, $bottom: 10px);
+      @include size(29px, 31px);
+      padding: 0;
+    }
+
+    &.zoom-in {
+      @include absolute($left: 735px, $bottom: 10px);
+      @include size(29px, 31px);
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.blue-link {
+  color: #3693e6;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+
+  &.f16 {
+    font-size: 16px;
+  }
+
+  &.heart-icon {
+    @include svg-icon-w-fallback( '../Images/Icons/icon_save_heart.svg', '', 18px, 18px);
+    font-size: 15px;
+    padding-left: 24px;
+    background-position: 0;
+    cursor: auto;
+
+    &.filled {
+      @include svg-icon-w-fallback( '../Images/Icons/icon_save_heart_filled.svg', '', 18px, 18px);
+      background-position: 0;
+    }
+  }
+
+  &.edit-icon {
+    @include svg-icon-w-fallback-no-element-width( '../Images/Icons/icon_edit.svg', '', 16px, 16px);
+    font-size: 15px;
+    padding-left: 22px;
+    background-position: 0;
+    margin-left: 5px;
+  }
+
+  &.add-icon {
+    @include svg-icon-w-fallback-no-element-width( '../Images/Icons/icon_add.svg', '', 16px, 16px);
+    margin-top: 30px;
+    height: 16px;
+    font-size: 15px;
+    padding-left: 22px;
+    background-position: 0;
+    margin-left: 5px;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+}
+
+.red-link {
+  color: #c30016;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+
+  &.remove-icon{
+    @include svg-icon-w-fallback-no-element-width('../Images/Icons/icon_remove.svg', '', 16px, 16px);
+    height: 16px;
+    font-size: 15px;
+    padding-left: 22px;
+    background-position: 0;
+    margin-left: 5px;
+    float: right;
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  text-decoration: none;
+
+  &.move {
+    &.up {
+      @include svg-icon-w-fallback('../Images/Icons/icon_move_up.svg', '', 30px, 30px);
+    }
+
+    &.down {
+      @include svg-icon-w-fallback('../Images/Icons/icon_move_down.svg', '', 30px, 30px);
+    }
+  }
+
+  &.close {
+    @include svg-icon-w-fallback('../Images/Icons/icon_close_black.svg', '', 20px, 20px);
+  }
+
+  &.close-circle {
+    @include svg-icon-w-fallback( '../Images/Icons/icon_card_close.svg', '', 31px, 32px);
+    background-color: transparent;
+    border: none;
+  }
+
+  &.red {
+    font-size: 15px;
+    background-color: #c30016;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    height: 44px;
+    color: #FFF;
+    padding: 0 15px;
+  }
+
+  &.green {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #2ba777;
+    height: 44px;
+    color: #FFF;
+    padding: 0 15px;
+
+    &.w100 {
+      width: 100% !important;
+    }
+
+    &:hover {
+      background-color: #198A57;
+      color: #95D3BB;
+    }
+
+    &:active {
+      background-color: #198A57;
+      color: #95D3BB;
+      box-shadow: inset 2px 3px 1px 0 #0E723F;
+    }
+
+    &:disabled {
+      background-color: #899195;
+      cursor: default;
+
+      &:hover {
+        color: #FFF;
+      }
+    }
+  }
+}

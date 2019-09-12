@@ -1,0 +1,133 @@
+.text-input-wrapper {
+  position: relative;
+
+  label {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .text-input {
+    border-radius: 5px;
+    border: solid 2px;
+    width: calc(100% - 20px);
+    padding: 0 8px;
+    font-size: 18px;
+    height: 40px;
+
+    &.search {
+      border-color: #1f2f38;
+    }
+
+    &.green {
+      background-color: #f3f4f5;
+      border-color: #2ba777;
+      font-size: 16px;
+      height: 36px;
+    }
+  }
+
+  .clear-search-icon {
+    @include svg-icon-w-fallback('../Images/Icons/icon_clear_search.svg', '', 16px, 16px);
+    @include absolute($bottom: 12px, $right: 10px);
+
+    &.search-placeholder-padding {
+      @include absolute($top: calc(50% - 8px), $right: 45px);
+    }
+  }
+
+  .search-icon {
+    @include svg-icon-w-fallback('../Images/Icons/icon_search.svg', '', 21px, 22px);
+    @include size(40px, 44px);
+    @include absolute($top: 0, $right: 0);
+    background-color: #1f2f38;
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+.input-w-label-wrapper {
+  position: relative;
+  height: 50px;
+  margin-bottom: 10px;
+
+  label {
+    @include absolute($left: 0, $top: 0);
+    width: 100%;
+    font-size: 14px;
+
+    input {
+      @include absolute($left: 0, $top: 25px);
+      width: 100%;
+      max-width: $large-width;
+      height: 20px;
+      font-size: 18px;
+      border-bottom: solid 1px #2ba777;
+    }
+
+    input[type=checkbox] {
+      float: left;
+      width: 20px;
+    }
+  }
+
+  &.error {
+    input {
+      border-bottom: solid 1px #c30016;
+    }
+  }
+}
+
+.error-text {
+  color: #c30016;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  padding: 0 0 0 35px;
+  width: 80px;
+
+  input, label {
+    cursor: pointer;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  input {
+    @include absolute($top: 0, $left: 0);
+    @include svg-icon-w-fallback('../Images/Icons/icon_checkbox_unchecked.svg', '', 25px, 25px);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:checked {
+      @include svg-icon-w-fallback('../Images/Icons/icon_checkbox_checked.svg', '', 25px, 25px);
+    }
+  }
+
+  &.filter-option {
+    padding: 0 0 0 25px;
+    width: 100%;
+    margin: 5px 0 5px 0;
+
+    label {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    input:checked + label {
+      color: #2ba777;
+    }
+
+    input {
+      @include absolute($top: 3px, $left: 0);
+      @include svg-icon-w-fallback('../Images/Icons/icon_checkbox_unchecked.svg', '', 20px, 20px);
+
+      &:checked {
+        @include svg-icon-w-fallback('../Images/Icons/icon_checkbox_checked.svg', '', 20px, 20px);
+      }
+    }
+  }
+}

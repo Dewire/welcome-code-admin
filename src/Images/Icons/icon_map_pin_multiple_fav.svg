@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="50" viewBox="0 0 46 50">
+    <defs>
+        <path id="a" d="M0 0v15h42V0z"/>
+        <filter id="c" width="110.5%" height="111.1%" x="-2.6%" y="-2.8%" filterUnits="objectBoundingBox">
+            <feOffset dx="1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.703139811 0 0 0 0 0.776436343 0 0 0 0 0.813084609 0 0 0 1 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <path id="d" d="M9.5 0H19v18H0V0z"/>
+        <path id="f" d="M9.5 0H19v18H0V0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-3 -3)">
+        <g opacity=".25" style="mix-blend-mode:multiply" transform="translate(6 38)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <path fill="#000" d="M41.998 8.908c.005-.03-.012-.058-.049-.084C41.22 7.234 32.125 6 21.001 6 9.42 6 0 7.358 0 9.028c0 .024.003.034.007.045.047.452.766.885 2.14 1.288 4.814 1.652 16.416 4.368 16.908 4.483.415.097 1.148.156 1.938.156s1.523-.059 1.938-.156c.49-.115 12.06-2.82 16.887-4.473C41.266 9.95 42 9.498 42 9.028a.22.22 0 0 0-.007-.05.34.34 0 0 1 .005-.07z" mask="url(#b)"/>
+        </g>
+        <path fill="#FFF" stroke="#FFF" stroke-width="3" d="M11.056 38.473c5.763 6.744 12.978 11.421 13.568 11.89.497.396 1.374.637 2.32.637.945 0 1.822-.24 2.319-.636.588-.468 7.896-5.532 13.675-12.277 1.733-1.717-33.527-1.258-31.882.386z"/>
+        <circle cx="27" cy="25" r="22" fill="#FFF"/>
+        <g filter="url(#c)" style="mix-blend-mode:multiply">
+            <mask id="e" fill="#fff">
+                <use xlink:href="#d"/>
+            </mask>
+            <path fill="#3693E6" d="M9.753 14.943C9.477 14.808 3 11.576 3 7.37c0-1.303.38-2.413 1.101-3.21A3.462 3.462 0 0 1 6.697 3c1.292 0 2.495.7 3.305 1.878.8-1.141 2-1.818 3.3-1.818.997 0 1.917.4 2.59 1.13C16.618 4.972 17 6.072 17 7.37c0 4.523-6.5 7.46-6.776 7.582a.554.554 0 0 1-.471-.009z" mask="url(#e)"/>
+        </g>
+        <mask id="g" fill="#fff">
+            <use xlink:href="#f"/>
+        </mask>
+        <path fill="#3693E6" d="M9.753 14.943C9.477 14.808 3 11.576 3 7.37c0-1.303.38-2.413 1.101-3.21A3.462 3.462 0 0 1 6.697 3c1.292 0 2.495.7 3.305 1.878.8-1.141 2-1.818 3.3-1.818.997 0 1.917.4 2.59 1.13C16.618 4.972 17 6.072 17 7.37c0 4.523-6.5 7.46-6.776 7.582a.554.554 0 0 1-.471-.009z" mask="url(#g)"/>
+    </g>
+</svg>

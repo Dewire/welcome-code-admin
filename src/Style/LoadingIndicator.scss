@@ -1,0 +1,6 @@
+.loading-indicator {
+  @include fixed($top: 0, $bottom: 0, $right: 0, $left: 0);
+  background-color: rgba(31, 47, 56, 0.75);
+  z-index: 1;
+  padding-top: calc(50vh - 30px);
+}

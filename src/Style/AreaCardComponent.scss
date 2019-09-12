@@ -1,0 +1,172 @@
+.area-card-container {
+  width: 245px;
+
+  .wrapper {
+    height: 275px;
+
+    .main-dividers {
+      &.top {
+        height: 123px;
+        position: relative;
+        border-radius: 5px 5px 0 0;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 1px 1px 0 0 rgba(108, 108, 108, 0.5);
+
+        .navigation-button {
+          @include absolute($bottom: 0);
+          @include size(100%, 40px);
+          text-align: left;
+          cursor: pointer;
+        }
+
+        .close-container {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+        }
+
+        .name-container {
+          position: absolute;
+          bottom: 0;
+          height: 40px;
+          background-color: rgba(0,0,0,0.4);
+          width: 100%;
+          text-transform: capitalize;
+
+          .arrow {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            height: 20px;
+          }
+
+          p {
+            @include absolute($bottom: 0);
+            font-size: 18px;
+            line-height: 26px;
+            margin: 7px 15px;
+            color: #ffffff;
+          }
+        }
+      }
+
+      &.bottom {
+        background-color: #FFF;
+        border-radius: 0 0 5px 5px;
+        position: relative;
+        padding: 5px;
+        box-shadow: 1px 1px 0 0 rgba(108, 108, 108, 0.5);
+
+        .marker-container{
+          @include svg-icon-w-fallback('../Images/Icons/icon_map_pin_grey.svg', '', 34px, 45px);
+          @include absolute($bottom: -24px, $left: calc(50% - 17px));
+        }
+
+        .link-container {
+          margin: 5px 10px 10px;
+
+          #fav-btn {
+            width: auto;
+          }
+        }
+
+        .icon-container {
+          display: inline-block;
+          height: 34px;
+
+          img {
+            width: 24px;
+          }
+        }
+
+        .text-row {
+          position: absolute;
+          top: 38px;
+          left: 0;
+          right: 0;
+
+          .text-container {
+            height: 34px;
+
+            p {
+              text-align: right;
+              font-size: 15px;
+              color: #1f2f38;
+              margin: 0 0 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(small only) {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    .wrapper {
+      height: 288px;
+      margin: 0 15px;
+      overflow: hidden;
+
+      .main-dividers {
+        height: 50%;
+
+        &.top {
+          border-radius: 7px 7px 0 0;
+          height: 144px;
+
+          .close-container {
+            top: 10px;
+            right: 10px;
+          }
+
+          .name-container {
+            height: 48px;
+
+            .arrow {
+              bottom: 15px;
+              right: 15px;
+            }
+
+            p {
+              font-size: 17px;
+              margin: 11px 15px;
+            }
+          }
+        }
+
+        &.bottom {
+          border-radius: 0;
+
+          .link-container {
+            margin: 10px 10px 15px 10px;
+          }
+
+          .icon-container {
+            text-align: center;
+
+            img {
+              width: auto;
+            }
+          }
+
+          .text-row {
+            top: 95px;
+
+            .text-container {
+              p {
+                text-align: center;
+                font-size: 15px;
+                color: #899195;
+                margin: 5px 0 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

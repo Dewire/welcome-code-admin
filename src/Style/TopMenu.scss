@@ -1,0 +1,111 @@
+.top-menu {
+  $a-tags: 'a, a:active, a:hover, a:visited';
+  $a-tags-active: 'a:active, a:hover, a:focus';
+
+  #{$a-tags} {
+    color: #fff;
+    text-decoration: none;
+  }
+  #{$a-tags-active} {
+    color: #2ba777;
+  }
+  li {
+    cursor: pointer;
+    text-decoration: none;
+    &:focus {
+      color: #2ba777;
+    }
+    &:hover {
+      color: #2ba777;
+    }
+  }
+  .language-selected {
+    color: #2ba777;
+  }
+}
+.drop-down-wrapper {
+  position: absolute;
+  input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+  }
+  label {
+    cursor: pointer;
+    display: inline-block;
+    width: 90%;
+  }
+  .checked {
+    background:url("../Images/Icons/icon_radio_button_checked.svg") right no-repeat;
+    background-size: 30px 30px;
+  }
+  .unchecked {
+    background:url("../Images/Icons/icon_radio_button_unchecked.svg") right no-repeat;
+    background-size: 30px 30px;
+  }
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #FFF;
+  }
+  &.information {
+    top: 90px;
+    right: 45px;
+
+    @include breakpoint(small only){
+      right: 20px;
+      left: 20px;
+    }
+
+    .arrow-up {
+      float: right;
+      margin-right: 67px;
+    }
+  }
+  &.language {
+    top: 90px;
+    right: 20px;
+
+    @include breakpoint(small only){
+      left: 20px;
+    }
+
+    .arrow-up {
+      float: right;
+      margin-right: 25px;
+    }
+  }
+  .dd-inner-wrapper {
+    clear: both;
+    float: left;
+    width: 350px;
+    height: 120px;
+    border: 1px #000;
+    border-radius: 5px;
+    background: #FFF;
+
+    @include breakpoint(small only){
+      width: 100%;
+    }
+
+    .row {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1f2f38;
+      a {
+        color: #1f2f38;
+        text-decoration: none;
+      }
+      padding: 15px 0 10px 40px;
+      a {
+        color: #1f2f38;
+        text-decoration: none;
+      }
+    }
+
+    .separator {
+      border-bottom: solid 1px #e1e1e1;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@mixin svg-icon-w-fallback($svgPath, $pngPath, $width, $height) {
+  background-image: url("#{$pngPath}");
+  background-image: linear-gradient(transparent, transparent), url("#{$svgPath}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $width $height;
+  width: $width;
+  height: $height;
+}
+@mixin svg-icon-w-fallback-no-element-width($svgPath, $pngPath, $width, $height) {
+  background-image: url("#{$pngPath}");
+  background-image: linear-gradient(transparent, transparent), url("#{$svgPath}");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $width $height;
+}
+/// Shorthand mixin for offset positioning
+/// @param {String} $position - Either `relative`, `absolute` or `fixed`
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+/// Shorthand mixin for absolute positioning
+/// Serves as an alias for `position(absolute, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+/// Shorthand mixin for relative positioning
+/// Serves as an alias for `position(relative, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+/// Shorthand mixin for fixed positioning
+/// Serves as an alias for `position(fixed, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// http://aslanbakan.com/en/blog/browser-and-device-specific-css-styles-with-sass-and-less-mixins/
+@mixin browser($browsers: Mozilla) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
